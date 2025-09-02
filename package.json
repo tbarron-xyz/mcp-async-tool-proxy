@@ -1,0 +1,33 @@
+{
+  "name": "mcp-async-tool-proxy",
+  "version": "0.1.0",
+  "description": "A Model Context Protocol server",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "mcp-async-tool-proxy": "./build/index.js"
+  },
+  "files": [
+    "build"
+  ],  "bin": {
+    "mcp-async-tool-proxy": "src/ndex.js"
+  },
+  "scripts": {
+    "build": "tsc && node -e \"require('fs').chmodSync('build/index.js', '755')\"",
+    "prepare": "npm run build",
+    "watch": "tsc --watch",
+    "inspector": "npx @modelcontextprotocol/inspector build/index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.17.3",
+    "@types/express": "^5.0.3",
+    "@types/minimist": "^1.2.5",
+    "express": "^5.1.0",
+    "minimist": "^1.2.8",
+    "uuid": "^11.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.24",
+    "typescript": "^5.3.3"
+  }
+}
