@@ -4,6 +4,10 @@ A Model Context Protocol server that acts as an asynchronous proxy for other MCP
 
 This server provides the same tools as a target MCP server, but instead of returning results immediately, it creates resources that are updated with the results when tool calls complete asynchronously.
 
+This allows an agent to fire off a long-running task and periodically check the results, without have its task progress blocked while the task is running.
+
+<img width="335" height="847" alt="image" src="https://github.com/user-attachments/assets/29d33691-8c80-48be-9809-03fa2a51f49f" />
+
 ## Features
 
 ### Tools
@@ -16,8 +20,6 @@ This server provides the same tools as a target MCP server, but instead of retur
 - List and access async operation status via `async://operation/` URIs
 - Each operation tracks the status, arguments, and results of async tool calls
 - JSON format for structured data access
-
-
 
 ### Configuration
 The server requires environment variables to configure the target MCP server:
